@@ -1,16 +1,44 @@
 import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash, faEdit } from "@fortawesome/free-solid-svg-icons";
 
 function Todo(props) {
+  const [editMode, setEditMode] = useState(false);
   const [complete, setComplete] = useState(false);
+  const shortid = require("shortid").generate();
 
   return (
     <div
-      key={props.key}
-      className='my-3 content-center p-3 bg-white rounded-lg shadow-md'
+      key={props.todo.key}
+      className='my-3 p-3 bg-white rounded-lg shadow-md flex items-center cursor-pointer'
+      onClick={() => updateCompletion(!complete)}
     >
-      {props.todo.text}
+      <input
+        className='form-checkbox w-5 h-8'
+        type='checkbox'
+        name='completed'
+        checked={complete}
+        // onChange={}
+      />
+      <span className='ml-3 flex-1'>{props.todo.text}</span>
+      <div className='hover-btn'>
+        <FontAwesomeIcon className='text-red-500' icon={faTrash} />
+      </div>
+      <div
+        className={`hover-btn ${123}`}
+        onClick={(e) => {
+          e.stopPropagation();
+          setEditMode(!editMode);
+        }}
+      >
+        <FontAwesomeIcon className='text-blue-500' icon={faEdit} />
+      </div>
     </div>
   );
+
+  function updateCompletion(completed) {
+    setComplete(completed);
+  }
 }
 
 export default Todo;

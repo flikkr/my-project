@@ -16,14 +16,16 @@ function App() {
           <Todo key={index} todo={todo}></Todo>
         ))}
         <div className='bg-white rounded-lg p-3'>
-          <input
-            className='transition duration-300 ease-in-out w-full p-2 border-b-2 focus:outline-none focus:border-blue-400 mb-4'
-            placeholder='Enter a todo...'
-            type='text'
-            value={todoText}
-            onChange={(e) => setTodoText(e.target.value)}
-          ></input>
-          <FontAwesomeIcon icon={["fal", "coffee"]} />
+          <div className='mb-4'>
+            <input
+              className='input-underline'
+              placeholder='Enter a todo...'
+              type='text'
+              value={todoText}
+              onChange={(e) => setTodoText(e.target.value)}
+            ></input>
+            <p className='text-red-500 hidden'>Invalid input</p>
+          </div>
           <button
             className='bg-blue-700 active:bg-blue-800 w-full shadow-md flex items-center p-2 justify-center rounded-md text-white'
             type='submit'
