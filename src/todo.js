@@ -9,7 +9,6 @@ function Todo(props) {
 
   return (
     <div
-      key={props.todo.key}
       className='my-3 p-3 bg-white rounded-lg shadow-md flex items-center cursor-pointer'
       onClick={() => updateCompletion(!complete)}
     >
@@ -20,16 +19,16 @@ function Todo(props) {
         checked={complete}
         // onChange={}
       />
-      <span className='ml-3 flex-1'>{props.todo.text}</span>
-      <div className='hover-btn'>
+      <span className={`ml-3 flex-1 ${complete ? 'line-through' : ''}`}>{props.todo.text}</span>
+      <div className='hover-btn' onClick={(e) => {
+        e.stopPropagation();
+        props.onDelete();
+      }}>
         <FontAwesomeIcon className='text-red-500' icon={faTrash} />
       </div>
       <div
-        className={`hover-btn ${123}`}
-        onClick={(e) => {
-          e.stopPropagation();
-          setEditMode(!editMode);
-        }}
+        className='hover-btn'
+        onClick={updateEditMode}
       >
         <FontAwesomeIcon className='text-blue-500' icon={faEdit} />
       </div>
@@ -38,6 +37,11 @@ function Todo(props) {
 
   function updateCompletion(completed) {
     setComplete(completed);
+  }
+
+  function updateEditMode(e) {
+    e.stopPropagation();
+    setEditMode(!editMode);
   }
 }
 

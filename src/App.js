@@ -13,9 +13,13 @@ function App() {
       </header>
       <div className='w-full max-w-lg'>
         {todos.map((todo, index) => (
-          <Todo key={index} todo={todo}></Todo>
+          <Todo
+            key={index}
+            todo={todo}
+            onDelete={() => deleteTodo(index)}
+          ></Todo>
         ))}
-        <div className='bg-white rounded-lg p-3'>
+        <form className='bg-white rounded-lg p-3' onSubmit={handleSubmit}>
           <div className='mb-4'>
             <input
               className='input-underline'
@@ -24,16 +28,15 @@ function App() {
               value={todoText}
               onChange={(e) => setTodoText(e.target.value)}
             ></input>
-            <p className='text-red-500 hidden'>Invalid input</p>
+            <span className='text-red-500 hidden'>Invalid input</span>
           </div>
           <button
             className='bg-blue-700 active:bg-blue-800 w-full shadow-md flex items-center p-2 justify-center rounded-md text-white'
             type='submit'
-            onClick={addTodo}
           >
             Add to do
           </button>
-        </div>
+        </form>
       </div>
     </div>
   );
@@ -52,6 +55,18 @@ function App() {
         text: todoText,
       },
     ]);
+  }
+
+  function deleteTodo(index) {
+    let newTodos = [...todos];
+    newTodos.splice(index, 1);
+    setTodos(newTodos);
+  }
+
+  function handleSubmit(e) {
+    if (todoText === "") return;
+
+    addTodo(todoText);
   }
 }
 
