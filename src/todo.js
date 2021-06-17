@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash, faEdit } from "@fortawesome/free-solid-svg-icons";
 
 function Todo(props) {
+  const [todoText, setTodoText] = useState(props.todo.text);
   const [editMode, setEditMode] = useState(false);
   const [complete, setComplete] = useState(false);
   const shortid = require("shortid").generate();
@@ -19,17 +20,32 @@ function Todo(props) {
         checked={complete}
         // onChange={}
       />
-      <span className={`ml-3 flex-1 ${complete ? 'line-through' : ''}`}>{props.todo.text}</span>
-      <div className='hover-btn' onClick={(e) => {
-        e.stopPropagation();
-        props.onDelete();
-      }}>
-        <FontAwesomeIcon className='text-red-500' icon={faTrash} />
+      <div className='ml-3 flex-1'>
+        {editMode ? (
+          <input
+            className='w-full input-underline'
+            type='text'
+            name='todoText'
+            value={todoText}
+            onChange={(e) => setTodoText(e.target.value)}
+            onClick={(e) => e.stopPropagation()}
+          />
+        ) : (
+          <span className={`${complete ? "line-through" : ""}`}>
+            {todoText}
+          </span>
+        )}
       </div>
       <div
         className='hover-btn'
-        onClick={updateEditMode}
+        onClick={(e) => {
+          e.stopPropagation();
+          props.onDelete();
+        }}
       >
+        <FontAwesomeIcon className='text-red-500' icon={faTrash} />
+      </div>
+      <div className='hover-btn' onClick={updateEditMode}>
         <FontAwesomeIcon className='text-blue-500' icon={faEdit} />
       </div>
     </div>
