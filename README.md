@@ -1,6 +1,6 @@
 # Tailwind-React todos
 
-Well, everyone needs to start learning somewhere, right? This is my attempt at writing a todo app using TailwindCSS and React, two technologies I'm quite new at.
+Everyone needs to start somewhere, right? This is my attempt at writing a todo app using TailwindCSS and React, two technologies I'm new at.
 
 ### `npm start`
 
