@@ -1,4 +1,4 @@
-# tailwind-react-todos
+# tailwind-react-todo
 
 Everyone needs to start somewhere, right? This is my attempt at writing a todo app using TailwindCSS and React, two technologies I'm new at.
 
