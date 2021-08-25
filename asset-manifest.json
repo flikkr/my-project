@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/tailwind-react-todos/static/css/main.cad66daa.chunk.css",
-    "main.js": "/tailwind-react-todos/static/js/main.36f9b1ef.chunk.js",
-    "main.js.map": "/tailwind-react-todos/static/js/main.36f9b1ef.chunk.js.map",
-    "runtime-main.js": "/tailwind-react-todos/static/js/runtime-main.b827faf8.js",
-    "runtime-main.js.map": "/tailwind-react-todos/static/js/runtime-main.b827faf8.js.map",
-    "static/js/2.0e6c33bf.chunk.js": "/tailwind-react-todos/static/js/2.0e6c33bf.chunk.js",
-    "static/js/2.0e6c33bf.chunk.js.map": "/tailwind-react-todos/static/js/2.0e6c33bf.chunk.js.map",
-    "index.html": "/tailwind-react-todos/index.html",
-    "static/css/main.cad66daa.chunk.css.map": "/tailwind-react-todos/static/css/main.cad66daa.chunk.css.map",
-    "static/js/2.0e6c33bf.chunk.js.LICENSE.txt": "/tailwind-react-todos/static/js/2.0e6c33bf.chunk.js.LICENSE.txt"
+    "main.css": "/tailwind-react-todo/static/css/main.cad66daa.chunk.css",
+    "main.js": "/tailwind-react-todo/static/js/main.36f9b1ef.chunk.js",
+    "main.js.map": "/tailwind-react-todo/static/js/main.36f9b1ef.chunk.js.map",
+    "runtime-main.js": "/tailwind-react-todo/static/js/runtime-main.4ed7025f.js",
+    "runtime-main.js.map": "/tailwind-react-todo/static/js/runtime-main.4ed7025f.js.map",
+    "static/js/2.0e6c33bf.chunk.js": "/tailwind-react-todo/static/js/2.0e6c33bf.chunk.js",
+    "static/js/2.0e6c33bf.chunk.js.map": "/tailwind-react-todo/static/js/2.0e6c33bf.chunk.js.map",
+    "index.html": "/tailwind-react-todo/index.html",
+    "static/css/main.cad66daa.chunk.css.map": "/tailwind-react-todo/static/css/main.cad66daa.chunk.css.map",
+    "static/js/2.0e6c33bf.chunk.js.LICENSE.txt": "/tailwind-react-todo/static/js/2.0e6c33bf.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.b827faf8.js",
+    "static/js/runtime-main.4ed7025f.js",
     "static/js/2.0e6c33bf.chunk.js",
     "static/css/main.cad66daa.chunk.css",
     "static/js/main.36f9b1ef.chunk.js"
